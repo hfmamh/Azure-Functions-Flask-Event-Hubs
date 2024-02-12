@@ -1,14 +1,14 @@
 from flask import Flask, render_template, request
-
 import asyncio
 from azure.eventhub import EventData
 from azure.eventhub.aio import EventHubProducerClient
 import os
 from dotenv import load_dotenv
-load_dotenv()
 
-# Always use relative import for custom module
-from .package.module import MODULE_VALUE
+
+if 'FUNCTIONS_EXTENSION_VERSION' not in os.environ:
+        print("Loading environment variables for .env file")
+        load_dotenv('./.env')
 
 app = Flask(__name__)
 
