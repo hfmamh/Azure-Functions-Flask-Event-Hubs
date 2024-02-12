@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+</head>
+<body>
+    <h2>Simple Flask Form</h2>
+    <form method="post" action="/">
+        <label for="user_gender">Select an option:</label>
+        <select id="user_gender" name="user_gender" required>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+        </select>
+        <br>
+        <br>
+        <label for="user_first">First Name:</label>
+        <input type="text" id="user_first" name="user_first" required>
+        <br>
+        <label for="user_last">Last Name:</label>
+        <input type="text" id="user_last" name="user_last" required>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
