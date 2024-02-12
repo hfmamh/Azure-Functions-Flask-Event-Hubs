@@ -1,7 +1,7 @@
-from flask import Flask, render_template, request
-import asyncio
 from azure.eventhub import EventData
 from azure.eventhub.aio import EventHubProducerClient
+from flask import Flask, render_template, request
+import asyncio
 import os
 from dotenv import load_dotenv
 
