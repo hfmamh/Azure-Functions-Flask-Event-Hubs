@@ -26,19 +26,13 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
 
-      #- name: Create and start virtual environment
-      #  run: |
-      #    python -m venv venv
-      #    source venv/bin/activate
+      - name: Create and start virtual environment
+        run: |
+          python -m venv venv
+          source venv/bin/activate
 
       - name: Install dependencies
-        run:  |
-              pushd './${{ env.AZURE_FUNCTIONAPP_PACKAGE_PATH }}'
-              python -m pip install --upgrade pip
-              pip install -r requirements.txt --target=".python_packages/lib/site-packages"
-              popd
-      - name: DEBUG current directory
-        run: ls
+        run: pip install -r requirements.txt
 
       # Optional: Add step to run tests here
 
@@ -74,9 +68,9 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v1
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F6DE9C66B93B4914BB2119B381E8E593 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_50EF44C183CC4CD196F87A2DF6852FC3 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E96EF81472B4401EBD1E0669B7EBCA71 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_FBDBDC00EFAD4895AEC42A606F6F1A32 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_7FA68B9AAF074987B0A02B19DD358980 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_86CEA0AD068E4F6788FA4EABF631E0C3 }}
 
       - name: 'Deploy to Azure Functions'
         uses: Azure/functions-action@v1
